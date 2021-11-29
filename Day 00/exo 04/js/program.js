@@ -1,16 +1,17 @@
-let result = levDist('mpi', 'oui2')
+result = levDist2("abc","yabd")
 console.log(result)
 
-function levDist(str1, str2){
-    let dif = 0
-    let length = Math.max(str1.length, str2.length)
-    for (let i=0;i<length;i++){
-        if (str1.split('')[i] !== str2.split('')[i]) {
-            dif++
-        }
+function levDist2(string1, string2) {
+    let i = 0;
+    let j = 0;
+    let result = "";
+    while (j < string2.length)
+    {
+        if (string1[i] !== string2[j] || i === string1.length)
+            result += string2[j];
+        else
+            i++;
+        j++;
     }
-    return dif
+    return result.length;
 }
-
-// Merci de ne pas effacer la ligne en dessous.
-exports.levDist =  levDist;
