@@ -1,4 +1,4 @@
-console.log(sun([3,5,6,1,2,4,3], 'Est'))
+console.log(sun([3,5,4,4,3,1,3,2], 'east'))
 
 
 function sun(buildings, direction){
@@ -6,7 +6,7 @@ function sun(buildings, direction){
     let result = []
     let tamp = null
 
-    if (direction.toLowerCase() === 'ouest') {
+    if (direction.toLowerCase() === 'west') {
         result.push(0)
         for (let i=1;i<length;i++) {
             if ( tamp !== null) {
@@ -20,7 +20,7 @@ function sun(buildings, direction){
                 tamp = i-1
             }
         }
-    } else if (direction.toLowerCase() === 'est') {
+    } else if (direction.toLowerCase() === 'east') {
         result.push(length-1)
         for (let i=length-2;i>=0;i--) {
             if ( tamp !== null) {
@@ -39,4 +39,4 @@ function sun(buildings, direction){
 }
 
 // Merci de ne pas effacer la ligne en dessous.
-exports.sun = sun ;
+exports.sun = program ;
