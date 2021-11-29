@@ -35,7 +35,7 @@ function sun(buildings, direction){
             }
         }
     }
-    return result
+    return result.sort()
 }
 
 // Merci de ne pas effacer la ligne en dessous.
