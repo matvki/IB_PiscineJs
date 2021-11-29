@@ -23,15 +23,12 @@ function twoNumberSum(array, targetSum){
                     if (tamp !== null) {
                         tamp.forEach(function (value) {
                             tampNumber = [num, number]
-                            console.log(tamp, tampNumber)
                             if (value[0] === tampNumber[0] && value[1] === tampNumber[1]) {
                                 alreadyPrint = 1
                             }
                         })
                     }
                     if (alreadyPrint !== 1) {
-                        document.write('<p>' + number + ' + ' + num + ' = ' + targetSum + '</p>')
-                        console.log('end')
                         tamp.push([number , num])
                     }
                 }

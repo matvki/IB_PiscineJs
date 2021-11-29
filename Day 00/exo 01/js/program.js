@@ -10,11 +10,7 @@ document.querySelector('#submit').addEventListener('click', () => {
 
 function isPalindrome(string){
     tamp = string.split('').reverse().join('')
-    if (tamp === string) {
-        document.write('<p>'+string+' est un palindrome</p>')
-        return true
-    }
-    return false
+    return tamp === string;
 }
 
 // Merci de ne pas effacer la ligne en dessous.

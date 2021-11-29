@@ -10,10 +10,9 @@ document.querySelector('#submit').addEventListener('click', () => {
 function threeLargestNumbers(array){
     let result
     if (array.length < 3) {
-        document.write('<p>Merci de mettre au moins 3 nombres</p>')
+        return 'less than 3 numbers'
     } else {
         result = array.sort(compare)
-        document.write(result[0] + ', ' + result[1] + ', ' + result[2])
         function compare(x, y) {
             return y - x;
         }
