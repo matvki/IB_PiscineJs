@@ -1,27 +1,13 @@
-let string = 'abdcadcfe'
-let array
-let tamp = 0
-let length
-let result
-result = firstNonRepeatingCharacter(string)
-console.log(result)
+console.log(firstNonRepeatedCharacter('tesdtabctest'))
 
-function firstNonRepeatingCharacter(string) {
-    array = string.split('')
-    length = array.length
-    array.forEach(function (value, i) {
-        tamp = 0
-        array.forEach(function (value1, j) {
-            if (i !== j) {
-                if (value === value1) {
-                    tamp = tamp + 1
-                }
-            }
-        })
-        if (tamp === 0) {
-            return value
+function firstNonRepeatedCharacter(string) {
+    for (let i = 0; i < string.length; i++) {
+        let c = string.charAt(i);
+        if ((string.indexOf(c) === i) && (string.indexOf(c, i + 1) === -1)) {
+            return c;
         }
-    })
+    }
+    return null;
 }
 
 // Do not edit the line below.
