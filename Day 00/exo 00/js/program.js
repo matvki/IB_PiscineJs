@@ -1,18 +1,19 @@
 let array
 let targetSum
-let test
-let tamp = null
-let tampNumber
-let alreadyPrint = 0
+let result
 
 document.querySelector('#submit').addEventListener('click', () => {
     array = document.querySelector('#numbers').value.split(',')
-    targetSum = document.querySelector('#target').value
-    twoNumberSum(array, targetSum)
+    targetSum = parseInt(document.querySelector('#target').value)
+    result = twoNumberSum(array, targetSum)
+    console.log(result)
 })
 
 function twoNumberSum(array, targetSum){
-    targetSum = parseInt(targetSum)
+    let alreadyPrint = 0
+    let test
+    let tamp = []
+    let tampNumber
     array.forEach(function (number, i) {
         array.forEach(function (num, j) {
             alreadyPrint = 0
@@ -21,22 +22,24 @@ function twoNumberSum(array, targetSum){
                 if (test === targetSum) {
                     if (tamp !== null) {
                         tamp.forEach(function (value) {
-                            tampNumber = num + ' + ' + number + ' = ' + targetSum
-                            if (value === tampNumber) {
+                            tampNumber = [num, number]
+                            console.log(tamp, tampNumber)
+                            if (value[0] === tampNumber[0] && value[1] === tampNumber[1]) {
                                 alreadyPrint = 1
                             }
                         })
                     }
                     if (alreadyPrint !== 1) {
                         document.write('<p>' + number + ' + ' + num + ' = ' + targetSum + '</p>')
-                        tamp = [number + ' + ' + num + ' = ' + targetSum]
+                        console.log('end')
+                        tamp.push([number , num])
                     }
                 }
             }
         })
     })
-    console.log(tamp)
+    return tamp
 }
 
 // Merci de ne pas effacer la ligne en dessous.
-// exports.twoNumberSum =  twoNumberSum;
+exports.twoNumberSum =  twoNumberSum;
