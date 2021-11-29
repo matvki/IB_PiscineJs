@@ -29,13 +29,13 @@ function twoNumberSum(array, targetSum){
                     }
                     if (alreadyPrint !== 1) {
                         document.write('<p>' + number + ' + ' + num + ' = ' + targetSum + '</p>')
-                        console.log(number + ' + ' + num + ' = ' + targetSum)
                         tamp = [number + ' + ' + num + ' = ' + targetSum]
                     }
                 }
             }
         })
     })
+    console.log(tamp)
 }
 
 // Merci de ne pas effacer la ligne en dessous.
