@@ -4,10 +4,7 @@ function tabTriCarre(array){
     array.forEach(function (value, key) {
         array[key] = value * value
     })
-    return array.sort(compare)
-    function compare(x, y) {
-        return x - y;
-    }
+    return array.sort(function(a, b) {return a - b;})
 }
 
 // Merci de ne pas effacer la ligne en dessous.

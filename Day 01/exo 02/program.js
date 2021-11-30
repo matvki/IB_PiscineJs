@@ -1,13 +1,13 @@
 console.log(pocketMoney([ 5, 7, 1, 1, 2, 3, 22]))
 
 function pocketMoney(array){
-    let P = array.sort(function(a, b) {return a - b;})
+    let arrSort = array.sort(function(a, b) {return a - b;})
     let sCoin = 0;
-    for (let i = 0; i < P.length; i++) {
-        if (P[i] > sCoin + 1){
+    for (let i = 0; i < arrSort.length; i++) {
+        if (arrSort[i] > sCoin + 1){
             return sCoin + 1
         }
-        sCoin += P[i]
+        sCoin += arrSort[i]
     }
     return sCoin + 1
 }

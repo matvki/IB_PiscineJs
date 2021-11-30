@@ -1,23 +1,12 @@
 console.log(firstDuplicateValue([ 1, 2, 3, 4, 5, 2]))
 
 function firstDuplicateValue(array){
-    let res = null
-    array.forEach(function (value, i) {
-        if (res !== null) {
-            return res
-        }
-        array.forEach(function (value1, j) {
-            if (i !== j) {
-                if (value === value1) {
-                    res = value
-                    return value
-                }
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array.length; j++) {
+            if (array[i] === array[j] && i !== j) {
+                return array[i]
             }
-        })
-
-    })
-    if (res !== null) {
-        return res
+        }
     }
     return -1
 }

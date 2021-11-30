@@ -1,19 +1,20 @@
 console.log(runLengthEncoding('AAAAAAAAAAAAABBCCCCDD'))
 
 function runLengthEncoding(string) {
-    let encodedString = "";
-    let currentLetter = string[0];
+    let result = "";
+    let letter = string[0];
     let letterCount = 1;
     for (let i = 1; i < string.length + 1; i++) {
-        if (string[i] === currentLetter && letterCount < 9) {
+        console.log(result)
+        if (string[i] === letter && letterCount < 9) {
             letterCount++;
         } else {
-            encodedString += letterCount + currentLetter;
-            currentLetter = string[i]
+            result += letterCount + letter;
+            letter = string[i]
             letterCount = 1;
         }
     }
-    return encodedString
+    return result
 }
 
 // Merci de ne pas effacer la ligne en dessous.
